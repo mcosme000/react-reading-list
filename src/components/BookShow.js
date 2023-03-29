@@ -2,12 +2,12 @@ import React from 'react'
 import '../stylesheets/book.css'
 
 const BookShow = ({book}) => {
-  console.log(book);
   return (
     <div className="book">
       <div className="img"></div>
+      <img src={require('../media/icon-edit01.png')} alt="edit icon" className='edit-icon'/>
       <div className='book-description'>
-        <h3>{book}</h3>
+        <h3>{book.title}</h3>
         <p>Description</p>
       </div>
     </div>
