@@ -1,9 +1,15 @@
 import React from 'react'
+import BookShow from './BookShow'
 
-const BookList = () => {
+const BookList = ({ books }) => {
+  const BookElements = books.map( book => {
+    return (
+      <BookShow book={book} key={book.id}/>
+    )
+  })
   return (
-    <div>
-      <p>BookList</p>
+    <div className='books-container'>
+      {BookElements}
     </div>
   )
 }

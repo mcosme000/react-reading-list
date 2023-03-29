@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const BookCreate = () => {
+const BookCreate = ({ addBook }) => {
+  const [input, setInput] = useState("")
+
+  const handleChange = (e) => {
+    setInput(e.target.value)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addBook(input)
+  }
   return (
     <div>
-      <p>BookCreate</p>
+      <form onSubmit={handleSubmit}>
+        <label>Book title</label>
+        <input type="text" onChange={handleChange}/>
+        <input type="submit" value="Add to your list" />
+      </form>
     </div>
   )
 }

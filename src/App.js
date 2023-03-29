@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import BookCreate from './components/BookCreate'
+import BookList from './components/BookList'
+
 
 const App = () => {
+  const [books, setBooks] = useState([])
+  const AddBooks = (book) => {
+    setBooks([...books, book])
+    
+  }
+
+
   return (
     <div className='app'>
-      <p>App</p>
+      <p>React Reading App</p>
+      <BookList books={ books }/>
+      <BookCreate addBook={AddBooks}/>
     </div>
   )
 }
