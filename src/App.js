@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import BookCreate from './components/BookCreate'
 import BookList from './components/BookList'
-
+import './stylesheets/global.css'
 
 const App = () => {
   const [books, setBooks] = useState([])
   const AddBooks = (book) => {
     setBooks([...books, book])
-    
+
   }
 
 
   return (
     <div className='app'>
-      <p>React Reading App</p>
-      <BookList books={ books }/>
+      <div className='main'>
+        <p>React Reading App</p>
+        <BookList books={ books }/>
+      </div>
       <BookCreate addBook={AddBooks}/>
     </div>
   )
