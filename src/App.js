@@ -5,9 +5,16 @@ import './stylesheets/global.css'
 
 const App = () => {
   const [books, setBooks] = useState([])
-  const AddBooks = (book) => {
-    setBooks([...books, book])
 
+  const AddBooks = (newTitle) => {
+    // this code creates a new array with the
+    // existing books PLUS the new one, so that
+    // we never modify the original array.
+    const updateBooks = [
+      ...books,
+      { id: books.length + 1, title: newTitle}
+    ]
+    setBooks(updateBooks)
   }
 
 
