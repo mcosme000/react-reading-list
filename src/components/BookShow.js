@@ -5,7 +5,10 @@ const BookShow = ({book}) => {
   return (
     <div className="book">
       <div className="img"></div>
-      <img src={require('../media/icon-edit01.png')} alt="edit icon" className='edit-icon'/>
+      <div className="icons">
+        <img src={require('../media/icon-edit01.png')} alt="edit icon" className='edit-icon'/>
+        <img src={require('../media/icon-cancel.png')} alt="delete icon"/>
+      </div>
       <div className='book-description'>
         <h3>{book.title}</h3>
         <p>Description</p>
