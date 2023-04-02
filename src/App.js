@@ -17,12 +17,20 @@ const App = () => {
     setBooks(updateBooks)
   }
 
+  // the filter method returns a new array
+  // we need to pass this function two levels down
+  const DeleteBookById = (id) => {
+    const updatedBooks = books.filter((book) => {
+      return book.id !== id
+    })
+    setBooks(updatedBooks)
+  }
 
   return (
     <div className='app'>
       <div className='main'>
         <p>React Reading App</p>
-        <BookList books={ books }/>
+        <BookList books={ books } deleteBook={DeleteBookById}/>
       </div>
       <BookCreate addBook={AddBooks}/>
     </div>
