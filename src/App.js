@@ -26,11 +26,21 @@ const App = () => {
     setBooks(updatedBooks)
   }
 
+  const EditBook = (id, newTitle) => {
+    const updatedBooks = books.map((book) => {
+      if (book.id === id)
+        return {...book, title: newTitle }
+      else
+        return book
+    })
+    setBooks(updatedBooks)
+  }
+
   return (
     <div className='app'>
       <div className='main'>
         <p>React Reading App</p>
-        <BookList books={ books } deleteBook={DeleteBookById}/>
+        <BookList books={ books } deleteBook={DeleteBookById} editBook={EditBook}/>
       </div>
       <BookCreate addBook={AddBooks}/>
     </div>

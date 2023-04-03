@@ -14,7 +14,7 @@ const BookCreate = ({ addBook }) => {
 
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="create-form"onSubmit={handleSubmit}>
       <label>Book title</label>
       <input type="text" value={title} onChange={handleChange}/>
       <input type="submit" value="Add to your list" />

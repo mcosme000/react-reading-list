@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import '../stylesheets/bookEdit.css'
 
-const BookEdit = () => {
+const BookEdit = ({onSubmit}) => {
+  const [newTitle, setNewTitle] = useState("")
+
+  const handleChange = (e) => {
+    setNewTitle(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(newTitle)
+    setNewTitle("")
+  }
+
   return (
-    <div>
-      <p>BookEdit</p>
-    </div>
+    <form className="edit-form" onSubmit={handleSubmit}>
+      <input type="text" value={newTitle} onChange={handleChange}/>
+      <input type="submit"/>
+    </form>
   )
 }
 

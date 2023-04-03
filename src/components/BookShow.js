@@ -2,11 +2,17 @@ import React, { useState } from 'react'
 import '../stylesheets/book.css'
 import BookEdit from './BookEdit'
 
-const BookShow = ({book, deleteBook}) => {
+const BookShow = ({book, deleteBook, editBook}) => {
   const [showEdit, setShowEdit] = useState(false)
 
   const handleEditBook = () => {
     setShowEdit(!showEdit)
+  }
+
+  const handleSubmit = (newTitle) => {
+    setShowEdit(false)
+    console.log(`The new book title is ${newTitle}`);
+    editBook(book.id, newTitle)
   }
 
   const handleDeleteBook = () => {
@@ -21,10 +27,9 @@ const BookShow = ({book, deleteBook}) => {
         <img src={require('../media/icon-cancel.png')} alt="delete icon" onClick={handleDeleteBook}/>
       </div>
       <div className='book-description'>
-        <h3>{book.title}</h3>
-        <p>Description</p>
+        <h3>{showEdit ? "Edit book" : book.title}</h3>
       </div>
-      {showEdit ? <BookEdit /> : ""}
+      {showEdit ? <BookEdit onSubmit={handleSubmit}/> : ""}
     </div>
   )
 }

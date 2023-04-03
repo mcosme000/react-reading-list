@@ -1,4 +1,4 @@
-form {
+.create-form {
   padding: 30px;
   background: rgb(177, 177, 254);
   width: 100%;
@@ -6,22 +6,22 @@ form {
   flex-direction: column;
 }
 
-form label {
+.create-form label {
   display: block;
   font-weight: bold;
 }
 
-form input {
+.create-form input {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
   margin-top: 10px;
 }
 
-input[type="text"] {
+.create-form input[type="text"] {
   width: 60%;
 }
 
-input[type="submit"] {
+.create-form input[type="submit"] {
   width: 20%;
 }
