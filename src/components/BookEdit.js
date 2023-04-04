@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import '../stylesheets/bookEdit.css'
 
-const BookEdit = ({onSubmit}) => {
-  const [newTitle, setNewTitle] = useState("")
+const BookEdit = ({onSubmit, title}) => {
+  const [newTitle, setNewTitle] = useState(titles)
 
   const handleChange = (e) => {
     setNewTitle(e.target.value)
@@ -17,7 +17,7 @@ const BookEdit = ({onSubmit}) => {
   return (
     <form className="edit-form" onSubmit={handleSubmit}>
       <input type="text" value={newTitle} onChange={handleChange}/>
-      <input type="submit"/>
+      <input type="submit" value="Save"/>
     </form>
   )
 }

@@ -29,7 +29,7 @@ const BookShow = ({book, deleteBook, editBook}) => {
       <div className='book-description'>
         <h3>{showEdit ? "Edit book" : book.title}</h3>
       </div>
-      {showEdit ? <BookEdit onSubmit={handleSubmit}/> : ""}
+      {showEdit ? <BookEdit onSubmit={handleSubmit} title={book.title}/> : ""}
     </div>
   )
 }
