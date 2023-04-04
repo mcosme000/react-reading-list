@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../stylesheets/bookEdit.css'
 
 const BookEdit = ({onSubmit, title}) => {
-  const [newTitle, setNewTitle] = useState(titles)
+  const [newTitle, setNewTitle] = useState(title)
 
   const handleChange = (e) => {
     setNewTitle(e.target.value)
