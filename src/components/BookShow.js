@@ -9,10 +9,9 @@ const BookShow = ({book, deleteBook, editBook}) => {
     setShowEdit(!showEdit)
   }
 
-  const handleSubmit = (newTitle) => {
+  const handleSubmit = (id, newTitle) => {
     setShowEdit(false)
-    console.log(`The new book title is ${newTitle}`);
-    editBook(book.id, newTitle)
+    editBook(id, newTitle)
   }
 
   const handleDeleteBook = () => {
@@ -21,7 +20,9 @@ const BookShow = ({book, deleteBook, editBook}) => {
 
   return (
     <div className="book" id={book.id}>
-      <div className="img"></div>
+      <div className="img">
+        <img src={`https://picsum.photos/seed/${book.id}/200/300`} alt="random book cover" />
+      </div>
       <div className="icons">
         <img src={require('../media/icon-edit01.png')} alt="edit icon" onClick={handleEditBook}/>
         <img src={require('../media/icon-cancel.png')} alt="delete icon" onClick={handleDeleteBook}/>
@@ -29,7 +30,7 @@ const BookShow = ({book, deleteBook, editBook}) => {
       <div className='book-description'>
         <h3>{showEdit ? "Edit book" : book.title}</h3>
       </div>
-      {showEdit ? <BookEdit onSubmit={handleSubmit} title={book.title}/> : ""}
+      {showEdit ? <BookEdit onSubmit={handleSubmit} book={book}/> : ""}
     </div>
   )
 }

@@ -12,6 +12,12 @@
   border-bottom-right-radius: 10px;
 }
 
+.book img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .book-description {
   margin-top: 10px;
   width: 160px;
