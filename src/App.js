@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import axios from 'axios';
+
 import BookCreate from './components/BookCreate'
 import BookList from './components/BookList'
 import './stylesheets/global.css'
@@ -6,14 +8,17 @@ import './stylesheets/global.css'
 const App = () => {
   const [books, setBooks] = useState([])
 
-  const AddBooks = (newTitle) => {
-    // this code creates a new array with the
-    // existing books PLUS the new one, so that
-    // we never modify the original array.
+  const AddBooks = async (newTitle) => {
+    const response = await axios.post('http://localhost:3001/books', {
+      title: newTitle
+    });
+
     const updateBooks = [
       ...books,
-      { id: books.length + 1, title: newTitle}
+      response.data
+      // this is the object we are getting from the PUT request
     ]
+
     setBooks(updateBooks)
   }
 
