@@ -1,24 +1,12 @@
 {
   "books": [
     {
-      "id": 2,
-      "title": "The Lord of the Rings"
+      "title": "The lord of the rings",
+      "id": 1
     },
     {
-      "title": "Mist Born",
-      "id": 3
-    },
-    {
-      "title": "hehe",
-      "id": 4
-    },
-    {
-      "title": "new Title!!!",
+      "title": "Mistborn",
       "id": 5
-    },
-    {
-      "title": "new book",
-      "id": 6
     }
   ]
 }

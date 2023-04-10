@@ -31,24 +31,33 @@ const App = () => {
     setBooks(updateBooks)
   }
 
+  const EditBook = async (id, newTitle) => {
+    const response = await axios.put(`http://localhost:3001/books/${id}`, {
+      title: newTitle
+    })
+
+    console.log(response);
+    const updatedBooks = books.map((book) => {
+      if (book.id === id)
+        return {...book, ...response.data};
+      else
+        return book
+    })
+
+    setBooks(updatedBooks)
+  }
+
   // the filter method returns a new array
   // we need to pass this function two levels down
-  const DeleteBookById = (id) => {
+  const DeleteBookById = async (id) => {
+    await axios.delete(`http://localhost:3001/books/${id}`)
     const updatedBooks = books.filter((book) => {
       return book.id !== id
     })
     setBooks(updatedBooks)
   }
 
-  const EditBook = (id, newTitle) => {
-    const updatedBooks = books.map((book) => {
-      if (book.id === id)
-        return {...book, title: newTitle }
-      else
-        return book
-    })
-    setBooks(updatedBooks)
-  }
+
 
   return (
     <div className='app'>
