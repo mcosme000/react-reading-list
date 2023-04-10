@@ -12,8 +12,8 @@ const BookCreate = ({ addBook }) => {
     e.preventDefault();
     addBook(title)
     setTitle('')
-
   }
+  
   return (
     <form className="create-form"onSubmit={handleSubmit}>
       <label>Book title</label>

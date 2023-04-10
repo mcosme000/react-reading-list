@@ -1,20 +1,8 @@
 {
   "books": [
     {
-      "title": "The lord of the rings",
-      "id": 1
-    },
-    {
-      "title": "Mistborn",
-      "id": 5
-    },
-    {
-      "title": "Harry Potter and the chamber of secrets",
-      "id": 6
-    },
-    {
-      "title": "Harry Potter and the philosopher's stone",
-      "id": 7
+      "title": "The chamber of secrets",
+      "id": 2
     }
   ]
 }

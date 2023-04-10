@@ -20,10 +20,13 @@ const App = () => {
 
   const AddBooks = async (newTitle) => {
     const apiResponse = await SearchBooks(newTitle)
-    const title = apiResponse.items[0].volumeInfo.title;
-    const 
+    const info = apiResponse.items[0].volumeInfo
+    const title = info.title;
+    const cover = info.imageLinks.thumbnail;
+    console.log(info);
+
     const response = await axios.post('http://localhost:3001/books', {
-      title: title
+      title: title, cover: cover
     });
 
     const updateBooks = [

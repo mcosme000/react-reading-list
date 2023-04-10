@@ -21,7 +21,7 @@ const BookShow = ({book, deleteBook, editBook}) => {
   return (
     <div className="book" id={book.id}>
       <div className="img">
-        <img src={`https://picsum.photos/seed/${book.id}/200/300`} alt="random book cover" />
+        <img src={book.cover} alt="random book cover" />
       </div>
       <div className="icons">
         <img src={require('../media/icon-edit01.png')} alt="edit icon" onClick={handleEditBook}/>
