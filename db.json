@@ -1,8 +1,24 @@
 {
   "books": [
     {
-      "title": "The chamber of secrets",
+      "title": "Harry Potter and the Chamber of Secrets",
+      "cover": "http://books.google.com/books/content?id=1o7D0m_osFEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "id": 1
+    },
+    {
+      "title": "El Héroe de las Eras (Nacidos de la bruma [Mistborn] 3)",
+      "cover": "http://books.google.com/books/content?id=XVG2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "id": 2
+    },
+    {
+      "title": "Project Hail Mary",
+      "cover": "http://books.google.com/books/content?id=-Ff2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "id": 3
+    },
+    {
+      "title": "The Fellowship of the Ring",
+      "cover": "http://books.google.com/books/content?id=U1Ne2A916MkC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "id": 4
     }
   ]
 }

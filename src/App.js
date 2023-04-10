@@ -39,8 +39,13 @@ const App = () => {
   }
 
   const EditBook = async (id, newTitle) => {
+    const apiResponse = await SearchBooks(newTitle)
+    const info = apiResponse.items[0].volumeInfo
+    const title = info.title;
+    const cover = info.imageLinks.thumbnail;
+
     const response = await axios.put(`http://localhost:3001/books/${id}`, {
-      title: newTitle
+      title: title, cover: cover
     })
 
     console.log(response);
@@ -64,15 +69,13 @@ const App = () => {
     setBooks(updatedBooks)
   }
 
-
-
   return (
     <div className='app'>
+      <BookCreate addBook={AddBooks}/>
       <div className='main'>
         <p>React Reading App</p>
         <BookList books={ books } deleteBook={DeleteBookById} editBook={EditBook}/>
       </div>
-      <BookCreate addBook={AddBooks}/>
     </div>
   )
 }
