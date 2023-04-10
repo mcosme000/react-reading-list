@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import BookCreate from './components/BookCreate'
 import BookList from './components/BookList'
+import SearchBooks from './components/Api'
 import './stylesheets/global.css'
 
 const App = () => {
@@ -18,8 +19,11 @@ const App = () => {
   }, []);
 
   const AddBooks = async (newTitle) => {
+    const apiResponse = await SearchBooks(newTitle)
+    const title = apiResponse.items[0].volumeInfo.title;
+    const 
     const response = await axios.post('http://localhost:3001/books', {
-      title: newTitle
+      title: title
     });
 
     const updateBooks = [
