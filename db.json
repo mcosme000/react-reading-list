@@ -11,14 +11,19 @@
       "id": 2
     },
     {
-      "title": "Project Hail Mary",
-      "cover": "http://books.google.com/books/content?id=-Ff2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "id": 3
+      "title": "Little Fires Everywhere",
+      "cover": "http://books.google.com/books/content?id=fUA_DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "id": 6
     },
     {
-      "title": "The Hobbit (Movie Tie-in Edition)",
-      "cover": "http://books.google.com/books/content?id=akaTEAAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-      "id": 4
+      "title": "Young Mungo",
+      "cover": "http://books.google.com/books/content?id=wXVKzwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "id": 7
+    },
+    {
+      "title": "The Nix",
+      "cover": "http://books.google.com/books/content?id=rKOqDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "id": 8
     }
   ]
 }

@@ -4,12 +4,14 @@ import BookList from './components/BookList'
 import BooksContext from './context/books'
 import './stylesheets/global.css'
 
+
+
 const App = () => {
   const { getBooks } = useContext(BooksContext)
 
   useEffect(() => {
     getBooks();
-  }, []);
+  }, [getBooks]);
 
   // the filter method returns a new array
   // we need to pass this function two levels down
