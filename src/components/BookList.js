@@ -1,14 +1,14 @@
 import { useContext } from 'react';
 import BooksContext from '../context/books';
-import React from 'react'
 import BookShow from './BookShow'
 import '../stylesheets/booklist.css'
 
-const BookList = ({ books, deleteBook, editBook }) => {
+const BookList = () => {
+  const { books } = useContext(BooksContext)
   // We need to access the useContext object:
   const BookElements = books.map((book) => {
     return (
-      <BookShow key={book.id} book={book} deleteBook={deleteBook} editBook={editBook}/>
+      <BookShow key={book.id} book={book}/>
     )
   })
   return (
