@@ -5,10 +5,10 @@ import BooksContext from './context/books'
 import './stylesheets/global.css'
 
 const App = () => {
-  const { GetBooks } = useContext(BooksContext)
+  const { getBooks } = useContext(BooksContext)
 
   useEffect(() => {
-    GetBooks();
+    getBooks();
   }, []);
 
   // the filter method returns a new array

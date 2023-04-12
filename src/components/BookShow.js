@@ -1,21 +1,23 @@
-import React, { useState } from 'react'
-import '../stylesheets/book.css'
+import React, { useState, useContext } from 'react'
 import BookEdit from './BookEdit'
+import BooksContext from '../context/books'
+import '../stylesheets/book.css'
+
 
 const BookShow = ({book, deleteBook, editBook}) => {
   const [showEdit, setShowEdit] = useState(false)
+  const { deleteBooks } = useContext(BooksContext)
 
   const handleEditBook = () => {
     setShowEdit(!showEdit)
   }
 
-  const handleSubmit = (id, newTitle) => {
+  const handleSubmit = () => {
     setShowEdit(false)
-    editBook(id, newTitle)
   }
 
   const handleDeleteBook = () => {
-    deleteBook(book.id)
+    deleteBooks(book.id)
   }
 
   return (
