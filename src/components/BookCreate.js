@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 // import SearchBooks from './SearchBooks'
 import '../stylesheets/bookcreate.css'
+import BooksContext from '../context/books'
 
-const BookCreate = ({ addBook }) => {
+const BookCreate = () => {
   const [title, setTitle] = useState("")
+  const { createBooks } = useContext(BooksContext)
 
   const handleChange = (e) => {
     setTitle(e.target.value)
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBook(title)
+    createBooks(title)
     setTitle('')
   }
-  
+
   return (
     <form className="create-form"onSubmit={handleSubmit}>
       <label>Book title</label>
